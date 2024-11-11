@@ -7,8 +7,8 @@ import Landing from './components/landing';
 import Borrower from './components/borrowerdash';
 import LoanStatus from './components/loanstatus';
 import TransactionHistory from './components/transac';
-import OfficerDashboard2 from './components/officerdashboard2'; // Correct import
-import OfficerDashboard3 from './components/officerdashboard3'; // Import the new component
+import OfficerDashboard2 from './components/OfficerDashboard2'; // Correct import
+import OfficerDashboard3 from './components/OfficerDashboard3'; // Import the new component
 import Payment from './components/payment';
 import OfficerProfile from './components/officerprof';
 import OfficerDashboard1 from './components/officerdashboard1';

@@ -1,4 +1,4 @@
-.application-form-page {
+.application-form-pageapp {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,20 +7,7 @@
    
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 5px;
-    background-color: white;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #990000;
-}
-
-.form-container {
+.sulodPorm{
     width: 990px;
     margin-top: 8%; /* Leave space for the fixed header */
     background-color: #E6E6EA;
@@ -28,10 +15,11 @@ header {
     border-radius: 8px;
     border: 1px dashed #000000; /* Dashed border */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
 }
 
 
-.form-title {
+.lontaytel{
     font-size: 36px;
     font-weight: bold;
     text-align: left; /* Align text to the left */
@@ -39,30 +27,33 @@ header {
     margin-left: 1px; /* Add some space from the left edge */
 }
 
-
-.loan-form {
+.porm {
     display: flex;
     flex-direction: column;
     padding: 10px;
 }
 
-.form-row1 {
+.plesDet {
     display: flex;
     justify-content: flex-end; /* Aligns the content to the right */
-    gap: 10px; /* Adjusts spacing between items, you can set it as needed */
-    margin-top: -65px; /* Remove negative margins */
-    margin-right: 0; /* Remove negative margins */
+   
+    margin-top: -75px; /* Remove negative margins */
+    margin-right: 10px; /* Remove negative margins */
     
 }
 
-.form-group-1,
-.form-group-2 {
+.lugar{
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 10px;
+}
+.det {
     display: flex;
     align-items: center; /* Aligns items vertically in the center */
     margin-bottom: 10px; /* Adds spacing between form groups */
 }
 
-.form-group-1 label
+.lugar label
 {
     margin-right: 5px;
     font-size: 18px;
@@ -70,16 +61,15 @@ header {
     font-weight: bold;
    
 }
-.form-group-2 label {
+.det label {
     width: 100px; /* Set a fixed width for labels to align them */
     font-size: 18px;
     color: #000000;
     font-weight: bold;
-    margin-right: 2px; /* Adds space between label and input */
+    margin-right: -180px; /* Adds space between label and input */
 }
 
-.form-group-1 select,
-.form-group-2 input[type="date"] {
+.lugar select {
     width: 150px; /* Ensures consistency in width for both input types */
     padding: 8px;
     border: 1px solid #000000;
@@ -87,9 +77,18 @@ header {
     font-size: 16px;
     cursor: pointer;
 }
+.det input[type="date"] {
+    width: 150px; /* Ensures consistency in width for both input types */
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 200px;
+}
 
 
-.form-group-3 {
+.bago {
     display: flex;
     align-items: center; /* Vertically center */
     justify-content: flex-end; /* Align items to the right */
@@ -99,14 +98,14 @@ header {
 }
 
 
-.form-group-3 label {
+.bago label {
     margin-right: 20px; /* Adds space between checkboxes */
     font-size: 18px;
     color: #000000;
     font-weight: bold;
 }
 /* The container */
-.container {
+.pili {
     display: block;
     position: relative;
     padding-left: 50px;
@@ -117,25 +116,38 @@ header {
 
 
 /* Hide the browser's default checkbox */
-.container input {
+.pili input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
     width: 0;
 }
+.pili input:checked + .checkmarkapp {
+    background-color: #10004E;
+    
+}
+
+.pili input:checked + .checkmarkapp::after {
+    content: "✔";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    font-size: 18px;
+    color: white;
+}
 
 /* Create a custom checkbox */
-.checkmark {
+.checkmarkapp {
     position: absolute;
     top: 0;
     left: 0;
     height: 25px;
     width: 25px;
-    background-color: #eee;
     border: 1px solid #10004E;
+    margin-top: 10px;
 }
-.checkmark-1 {
+.checkmark-1app {
     position: absolute;
     top: 0;
     left: 0;
@@ -146,29 +158,29 @@ header {
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
+.containerapp:hover input ~ .checkmarkapp {
     background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
+.containerapp input:checked ~ .checkmarkapp {
     background-color: #10004E;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmarkapp:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
+.containerapp input:checked ~ .checkmarkapp:after {
     display: block;
 }
 
 /* Style the checkmark/indicator */
-.container .checkmark:after {
+.containerapp .checkmarkapp:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -180,21 +192,36 @@ header {
     transform: rotate(45deg);
 }
 
-.form-row2 {
+.isa {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
-    padding: 10px;
-    gap: 50px;
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+
 }
 
 
-.gender {
+.gender{
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack label and input vertically */
-    width: 50%; /* Make each group take full width */
+    
 }
-.age {
+.gender select {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 5px 0px 12px;
+    border-radius: 0%  
+
+}
+.gender label {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 50px 0px 0px;
+    border-radius: 0%  
+
+}
+.ageapp {
     display: flex; /* Use flexbox for alignment */
     align-items: flex-end;
     flex-direction: column; /* Stack label and input vertically */
@@ -203,7 +230,7 @@ header {
     margin-top: -74px;
 }
 
-.age input {
+.ageapp input {
     width: 50px; /* Set width to 50px */
     padding: 5px; /* Add padding for better appearance */
     border: 1px solid #ccc;
@@ -211,10 +238,10 @@ header {
     font-size: 14px;
     margin-left: 150px;
 }
-.age label {
+.ageapp label {
     margin-right: -10px;
 }
-.civil{
+.civilapp{
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack label and input vertically */
     width: 50%; /* Make each group take full width */
@@ -226,40 +253,72 @@ header {
 
 }
 
+.pormleft, .pormrayt {
+    width: 48%;
+}
 
+.isa {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 
-.form-group {
-    margin-bottom: 10px;
-    width: 95%;
+.fillupan {
+    margin-bottom: 0px;
     background-color: #E6E6EA;
-    
-    
- }
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #000000;
-    margin-left: 5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea,
-.form-group input[type="file"] {
-    width: 100%; /* Ensures all input types take the full width of the parent */
     padding: 10px;
-    border-radius: 0;
-    font-size: 14px;
-    border: 1px solid #10004E;
+   z-index:1;
 }
+
+.fillupan label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #000;
+    margin-left: 0px;
+}
+input{
+    margin-left:200px;
+}
+
+.fillupan input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #10004E;
+    font-size: 14px;
+    margin-left: 0;
+    border-radius: 0%;
+    background-color: #fff;
+
+}
+.fillupan select,
+.fillupan textarea {
+    width: 105%;
+    padding: 8px;
+
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.balanceFields label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 55%;
+}
+
+.balanceFields input {
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
 
 textarea {
     height: 60px; /* Keep this if you want a fixed height for textareas */
 }
 
-.checkbox-group {
+.checkbox-groupapp {
     padding-left: 5px;
 }
 
@@ -291,14 +350,15 @@ textarea {
     max-width: 95%;
 }
 
-.checkbox-item {
+.checkboxapp-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px; /* Optional: Adds some spacing between items */
+    background-color:#73ca59;
+    margin-bottom: 10px; /* Optional: Adds some spacing between items */
 }
 
-.checkbox-item label {
+.checkboxapp-item label {
     margin-right: 10px; /* Adds space between the label and checkbox */
 }
 
@@ -322,7 +382,7 @@ textarea {
     gap: 20px; /* Adds space between the Branch and Date fields */
 }
 
-.form-controls .form-group {
+.form-controls .fillupan {
     display: flex;
     flex-direction: column;
     margin-left: 20px;
@@ -338,29 +398,404 @@ textarea {
 
 }
 
-.form-row {
+.form-rowapp {
     display: flex;
     flex-wrap: wrap; /* Allows the columns to wrap onto the next line if needed */
     gap: 20px; /* Adds space between columns */
 }
 
-.column {
+.columnapp {
     flex: 1; /* Each column will take equal space */
     min-width: 200px; /* Minimum width for responsiveness */
 }
-.column-1 {
+.column-1app {
     flex: 1; /* Each column will take equal space */
     min-width: 200px; /* Minimum width for responsiveness */
 }
 
 
 /* Additional styling for checkboxes */
-.checkbox-group {
+.checkbox-groupapp {
     display: flex;
     flex-direction: column; /* Stack checkbox inputs vertically */
 }
 
-.parent-container {
+.parent-containerapp {
     align-items: end;
     text-align: end;
+} 
+
+.application-form-pageapp1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+   
+}
+
+
+
+.sulodPorm1{
+    width: 990px;
+    margin-top: 8%; /* Leave space for the fixed header */
+    background-color: #E6E6EA;
+    padding: 20px 50px; /* Add padding on all sides (top/bottom: 30px, left/right: 20px) */
+    border-radius: 8px;
+    border: 1px dashed #73ca59; /* Dashed border */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.lontaytel1{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left; /* Align text to the left */
+    margin-bottom: 20px;
+    margin-left: 1px; /* Add some space from the left edge */
+}
+
+.porm1 {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.plesDet1 {
+    display: flex;
+    justify-content: flex-end; /* Aligns the content to the right */
+    margin-top: -75px; /* Remove negative margins */
+    margin-right: 0; /* Remove negative margins */
+    
+}
+
+.lugar1,
+.det1 {
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    margin-bottom: 10px; /* Adds spacing between form groups */
+}
+
+.lugar1 label
+{
+    margin-right: 5px;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+   
+}
+.det1 label {
+    width: 100px; /* Set a fixed width for labels to align them */
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    margin-right: 2px; /* Adds space between label and input */
+}
+
+.lugar1 select,
+.det1 input[type="date"] {
+    width: 150px; /* Ensures consistency in width for both input types */
+    padding: 8px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Create a custom checkbox */
+.checkmarkapp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #10004E;
+    margin: 0px 10px;
+}
+.checkmark-1app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border: 1px solid #10004E;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarkapp:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+.isa {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    max-width: 1000px;
+    margin: 0 auto;
+
+}
+
+
+.genderapp {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+    width: 50%; /* Make each group take full width */
+}
+.ageapp {
+    display: flex; /* Use flexbox for alignment */
+    align-items: flex-end;
+    flex-direction: column; /* Stack label and input vertically */
+    width: 41.5%; /* Make each group take full width */
+    margin-left: 100px;
+    margin-top: -74px;
+}
+
+.ageapp input {
+    width: 50px; /* Set width to 50px */
+    padding: 5px; /* Add padding for better appearance */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-left: 150px;
+}
+.ageapp label {
+    margin-right: -10px;
+}
+.civilapp{
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+    width: 50%; /* Make each group take full width */
+}
+
+.column {
+    min-width: 50px;
+    flex:1;
+
+}
+
+.pormleft1, .pormrayt1 {
+    width: 48%;
+}
+
+.isa1 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.fillupan1 {
+    margin-bottom: 0px;
+    background-color: #E6E6EA;
+    padding: 10px;
+   z-index:1;
+}
+
+.fillupan1 label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #000;
+    margin-left: 0px;
+}
+input{
+    margin-left:-110px;
+}
+
+.fillupan1 input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #10004E;
+    font-size: 14px;
+    margin-left: 0;
+    border-radius: 0%;
+
+}
+.fillupan1 select,
+.fillupan1 textarea {
+    width: 105%;
+    padding: 8px;
+
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.balanceFields label {
+    display: inline-block;
+    width: 120px;
+    margin-right: 55%;
+}
+
+.balanceFields input {
+    display: inline-block;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+
+textarea {
+    height: 60px; /* Keep this if you want a fixed height for textareas */
+}
+
+.checkbox-groupapp {
+    padding-left: 5px;
+}
+
+.submit-btn {
+    background-color: #10004E;
+    color: white;
+    padding: 10px;
+    border: none; /* This will have no effect on an anchor tag, you may remove it */
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 15%; /* Adjust this if you want the button to be wider */
+    text-align: center; /* Center text inside the anchor */
+    display: inline-block; /* Ensure the anchor behaves like a button */
+    text-decoration: none; /* Remove underline from the anchor text */
+}
+
+.submit-btn:hover {
+    background-color: #2f2a8c;
+}
+
+
+.aboutp {
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 150%;
+    text-align: justify;
+    margin: 0 auto;
+    max-width: 95%;
+}
+
+.checkboxapp-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px; /* Optional: Adds some spacing between items */
+}
+
+.checkboxapp-item label {
+    margin-right: 10px; /* Adds space between the label and checkbox */
+}
+
+.payment-others-text {
+    width: 50%;
+    border: none; /* Adjust if needed */
+}
+
+.form-controls .fillupan {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    width: 100%; /* Ensures each form group is full width */
+}
+
+.other {
+    margin-bottom: 10px;
+    width: 93%;
+    margin: 5px; /* Margin around the form container */
+    padding: 20px; /* Padding inside the container */
+    border-radius: 8px; /* Rounded corners */
+
+}
+
+.form-rowapp {
+    display: flex;
+    flex-wrap: wrap; /* Allows the columns to wrap onto the next line if needed */
+    gap: 20px; /* Adds space between columns */
+}
+
+.columnapp {
+    flex: 1; /* Each column will take equal space */
+    min-width: 200px; /* Minimum width for responsiveness */
+}
+.columnapp input{
+    margin-left: 50px;
+    min-width: 200px; /* Minimum width for responsiveness */
+    border: 1px solid #10004E;
+    border-radius: 0%;
+}
+.column-1app {
+    flex: 1; /* Each column will take equal space */
+    min-width: 200px; /* Minimum width for responsiveness */
+}
+
+
+/* Additional styling for checkboxes */
+.checkbox-groupapp {
+    display: flex;
+    flex-direction: column; /* Stack checkbox inputs vertically */
+}
+
+.parent-containerapp1 {
+    align-items: end;
+    text-align: end;
+}
+
+.bago {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.application-type {
+    display: flex;
+    gap: 20px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 25px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 16px;
+    width: 16px;
+    border: 1px solid #666;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+.checkbox-container input:checked + .checkmark {
+    background-color: #4CAF50; /* Change color to what you prefer */
+    border-color: #4CAF50;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 4px;
+    top: 0;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-container input:checked + .checkmark:after {
+    display: block;
 }

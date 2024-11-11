@@ -7,6 +7,7 @@
    
 }
 
+
 .sulodPorm{
     width: 990px;
     margin-top: 8%; /* Leave space for the fixed header */
@@ -202,45 +203,112 @@
 }
 
 
-.gender{
+
+.genderapp{
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack label and input vertically */
-    
+
 }
-.gender select {
+
+.genderapp select {
     width: 50%; /* Make each group take full width */
     padding: 11px;
     margin: 0px 5px 0px 12px;
-    border-radius: 0%  
-
+    border-radius: 0%;
+    border: 1px solid #10004E;
 }
-.gender label {
+.genderapp label {
     width: 50%; /* Make each group take full width */
     padding: 11px;
     margin: 0px 50px 0px 0px;
     border-radius: 0%  
 
 }
-.ageapp {
-    display: flex; /* Use flexbox for alignment */
-    align-items: flex-end;
-    flex-direction: column; /* Stack label and input vertically */
-    width: 41.5%; /* Make each group take full width */
-    margin-left: 100px;
-    margin-top: -74px;
+
+.ubosbali {
+    margin-top: 30px;
+}
+.ubosbali h4{
+    margin-left: 12px;
 }
 
-.ageapp input {
-    width: 50px; /* Set width to 50px */
-    padding: 5px; /* Add padding for better appearance */
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.ubosbali2 {
+    margin-top: 73px;
+}
+.ubosbali2 h4{
+    margin-left: 12px;
+}
+
+.gagmay {
+    margin-top: -20px;
+}
+.genderco{
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+    margin-top: -75px;
+
+}
+
+.genderco select {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 5px 0px 12px;
+    border-radius: 0%;
+    border: 1px solid #10004E;
     font-size: 14px;
-    margin-left: 150px;
+
+
 }
-.ageapp label {
-    margin-right: -10px;
+.genderco label {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 50px 0px 0px;
+    border-radius: 0%  
+
 }
+.civilco{
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+
+
+}
+
+.civilco select {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 5px 0px 12px;
+    border-radius: 0%;
+    border: 1px solid #10004E;
+
+
+}
+.civilco label {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 50px 0px 0px;
+    border-radius: 0%  
+
+}
+.ageco{
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+    
+}
+.ageco input{
+    border: 1px solid #10004E;
+   margin-left: 268px;
+   width: 40%;
+   border-radius: 0;
+   padding: 11px;
+}
+.ageco label{
+    margin-left: 258px;
+    width: 40%;
+    border-radius: 0;
+    padding: 11px;
+}
+
+
 .civilapp{
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack label and input vertically */
@@ -295,7 +363,7 @@ input{
 .fillupan textarea {
     width: 105%;
     padding: 8px;
-
+    border: 1px solid #10004E;
     font-size: 14px;
     box-sizing: border-box;
     position: relative;
@@ -444,6 +512,7 @@ textarea {
     border-radius: 8px;
     border: 1px dashed #73ca59; /* Dashed border */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
 }
 
 
@@ -620,7 +689,7 @@ input{
 .fillupan1 textarea {
     width: 105%;
     padding: 8px;
-
+    border: 1px solid #10004E;
     font-size: 14px;
     box-sizing: border-box;
     position: relative;
@@ -798,4 +867,155 @@ textarea {
 
 .checkbox-container input:checked + .checkmark:after {
     display: block;
+}
+
+
+
+/***********************************************/
+
+.table-header {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.obligation-table, .properties-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.obligation-table th, .properties-table th {
+    background-color: #b3b3b3;
+    color: white;
+    padding: 8px;
+    border: 1px solid #0e0e0e;
+    text-align: center;
+}
+
+.obligation-table td, .properties-table td {
+    padding: 8px;
+    border: 1px solid #000000;
+}
+.obligation-table input[type="text"], [type="date"] {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none; /* Disables resizing for textareas, if desired */
+}
+.obligation-table input{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 0px;
+    
+} 
+.properties-table input {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 0px;
+
+}
+.properties-table textarea {
+    width: 100%;
+    height: 50px; /* Adjust height as needed */
+    box-sizing: border-box;
+    resize: vertical; /* Allows users to adjust the height if needed */
+}
+
+.properties-table input[type="text"],
+.properties-table textarea {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none; /* Disables resizing for textareas, if desired */
+}
+
+
+.additional-info {
+    display: flex;
+    gap: 200px;
+    margin-top: 20px;
+    margin-bottom: 2%;
+}
+
+.additional-info label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.additional-info input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+
+/* Flexbox container to align items horizontally */
+.form-row-checkbox-upload-date {
+    display: flex;
+    align-items: center;
+    gap: 100px; /* Space between fields, adjust as needed */
+    margin-bottom: 20px; /* Add spacing below the row */
+    margin-left: 150px;
+}
+
+/* Checkbox field styling */
+.checkbox-field {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-field input[type="checkbox"] {
+    margin-right: 5px;
+
+
+}
+
+/* Upload field styling */
+.upload-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upload-field label{
+    margin: 10px 80px 8px 5px;
+}
+
+.upload-field input[type="file"] {
+    border: 1px solid #10004E;
+    margin-left: 12px;
+    border-radius: 0%;
+    width: 250px; /* Adjust width as needed */
+}
+
+/* Date field styling */
+.date-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.date-field label{
+    margin-right: 120px;
+}
+
+.date-field input[type="date"] {
+    width: 150px; /* Adjust width as needed */
+    padding: 8px;
+    border: 1px solid #10004E;
+    margin-left: 30px;
+    border-radius: 0%;
+}
+.map-container {
+    margin-top: 20px;
+    height: 400px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
 }

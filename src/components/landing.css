@@ -105,6 +105,17 @@ header {
     flex: 1;
     padding: 10px;
 }
+.text-content button 
+{
+    background-color: #990000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    align-self: center; 
+}
 
 h1 {
     font-size: 46px;

@@ -6,11 +6,9 @@ const Appform = () => {
     return (
         <div className="application-form-pageapp">
             {/* Header Section */}
-            <header>
-                <img src="logo.png" alt="MSU-IIT NMPC Logo" className="logo" />
-                <h2 className="landingh2">MSU-IIT National Multi-Purpose Cooperative</h2>
-                <a href="/login" className="nave">Login</a>
-                <a href="/register" className="nave1">Register</a>
+            <header className="header">
+                <img src="logo.png" alt="MSU-IIT NMPC Logo" className="logol" />
+                <h2 className="landingh2off2">MSU-IIT National Multi-Purpose Cooperative</h2>
             </header>
 
             {/* Form Container */}
@@ -78,7 +76,7 @@ const Appform = () => {
                                 <label htmlFor="age">Age:</label>
                                 <input type="number" id="age" name="age" required />
                             </div>
-                            <div className="gender">
+                            <div className="genderapp">
                                 <label htmlFor="sex">Sex:</label>
                                 <select id="sex" name="sex" required>
                                     <option value="female">Female</option>
@@ -86,7 +84,7 @@ const Appform = () => {
                                 </select>
                             </div>
 
-                            <div className="gender">
+                            <div className="genderapp">
                                 <label htmlFor="civilStatus">Civil Status:</label>
                                 <select id="civilStatus" name="civilStatus" required>
                                     <option value="single">Single</option>

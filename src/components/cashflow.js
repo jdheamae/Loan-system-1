@@ -49,11 +49,9 @@ const CashFlow = () => {
     return (
         <div className="cashapplication">
             {/* Header Section */}
-            <header>
-                <img src="logo.png" alt="MSU-IIT NMPC Logo" className="logo" />
-                <h2 className="landingh2">MSU-IIT National Multi-Purpose Cooperative</h2>
-                <a href="/login" className="nave">Login</a>
-                <a href="/register" className="nave1">Register</a>
+            <header className="header">
+                <img src="logo.png" alt="MSU-IIT NMPC Logo" className="logol" />
+                <h2 className="landingh2off2">MSU-IIT National Multi-Purpose Cooperative</h2>
             </header>
 
 

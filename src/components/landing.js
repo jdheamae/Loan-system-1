@@ -90,12 +90,13 @@ const Landing = () => {
             
             <div className="contentlan">
                <div className="main-banner">
-                    <div className="text-content">
-                        <h1>Quick and Easy Loans for Your Financial Needs.</h1>
-                        <p>Our loan services offer a hassle-free and streamlined borrowing experience, providing you with the funds you need in a timely manner to meet your financial requirements.</p>
-                        <Link to="/appform" style={{ textDecoration: 'none', color: 'inherit' }}>Apply Now!</Link>
-                        
-                    </div>
+               <div className="text-content">
+                    <h1>Quick and Easy Loans for Your Financial Needs.</h1>
+                    <p>Our loan services offer a hassle-free and streamlined borrowing experience, providing you with the funds you need in a timely manner to meet your financial requirements.</p>
+                    <button onClick={() => navigate('/appform')}>
+                        Apply Now!
+                    </button>
+                </div>
                     <img src="bldg.png" alt="Building" className="banner-img"/>
                 </div>
                 <div className="services-section">
@@ -135,12 +136,12 @@ const Landing = () => {
             <div className="services-section">
                 <h2 className="services">Our Services</h2>
                 <div className="services-grid">
-                    <div className="service-card">
-                        <img src="personal.png" alt="Building" className="icon"/>     
-                        <h3>Personal Loan</h3>
-                        <p>Personal loans provide borrowers with flexibility in how they use the funds...</p>
-                        <button>Apply now</button>
-                    </div>
+                <div className="service-card">
+                    <img src="personal.png" alt="Building" className="icon" />
+                    <h3>Personal Loan</h3>
+                    <p>Personal loans provide borrowers with flexibility in how they use the funds...</p>
+                    <button onClick={() => navigate('/appform')}>Apply now</button>
+                </div>
                     <div className="service-card">
                         <img src="educ.png" alt="Building" className="icon"/>       
                         <h3>Educational Loan</h3>

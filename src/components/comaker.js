@@ -1,21 +1,13 @@
 import './appform.css';
 import Footer from './footer';
 import React, { useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
+
+// Set up a custom icon for the Leaflet marker
+
 
 const CoMaker = () => {
-    const [isMapVisible, setIsMapVisible] = useState(false);
-    const [location, setLocation] = useState(null);
 
-    const handleCheckboxChange = () => {
-        setIsMapVisible(!isMapVisible);
-    };
-
-    const handleLocationSelect = (selectedLocation) => {
-        setLocation(selectedLocation);
-    };
+    
     return (
         <div className="application-form-pageapp1">
             {/* Header Section */}
@@ -279,26 +271,8 @@ const CoMaker = () => {
                             {/* Upload Signature and Date */}
 
 {/* Share Residence Location */}
-                    <div className="form-row-checkbox-upload-date">
-                        <div className="checkbox-field">
-                            <input
-                                type="checkbox"
-                                id="shareResidenceLocation"
-                                name="shareResidenceLocation"
-                                onChange={handleCheckboxChange}
-                            />
-                            <label htmlFor="shareResidenceLocation">Share Residence Location</label>
-                        </div>
 
-                        {isMapVisible && (
-                            <div className="map-container">
-                                <PhilippinesMap onLocationSelect={handleLocationSelect} />
-                                {location && (
-                                    <p>Selected Location: Latitude {location[0]}, Longitude {location[1]}</p>
-                                )}
-                            </div>
-                        )}
-                    </div>
+                                    
 
                     <div className="form-row-checkbox-upload-date">
                         <div className="upload-field">

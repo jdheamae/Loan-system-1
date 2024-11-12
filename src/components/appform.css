@@ -116,6 +116,7 @@
 }
 
 
+
 /* Hide the browser's default checkbox */
 .pili input {
     position: absolute;
@@ -314,6 +315,22 @@
     flex-direction: column; /* Stack label and input vertically */
     width: 50%; /* Make each group take full width */
 }
+.civilapp select {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 5px 0px 12px;
+    border-radius: 0%;
+    border: 1px solid #10004E;
+
+
+}
+.civilapp label {
+    width: 50%; /* Make each group take full width */
+    padding: 11px;
+    margin: 0px 50px 0px 0px;
+    border-radius: 0%  
+
+}
 
 .column {
     min-width: 50px;
@@ -388,6 +405,14 @@ textarea {
 
 .checkbox-groupapp {
     padding-left: 5px;
+}
+
+.checkboxq-groupapp {
+    margin-left: -182px;
+    margin-top: -90px;
+}
+.checkboxq-groupapp label{
+    font-size: 14px;
 }
 
 .submit-btn {
@@ -614,27 +639,32 @@ textarea {
 .genderapp {
     display: flex; /* Use flexbox for alignment */
     flex-direction: column; /* Stack label and input vertically */
-    width: 50%; /* Make each group take full width */
+    margin-top: -75px;
+}
+
+.civilapp{
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack label and input vertically */
+
+
 }
 .ageapp {
     display: flex; /* Use flexbox for alignment */
-    align-items: flex-end;
-    flex-direction: column; /* Stack label and input vertically */
-    width: 41.5%; /* Make each group take full width */
-    margin-left: 100px;
-    margin-top: -74px;
+    flex-direction: column;
 }
 
-.ageapp input {
-    width: 50px; /* Set width to 50px */
-    padding: 5px; /* Add padding for better appearance */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-left: 150px;
+.ageapp input{
+    border: 1px solid #10004E;
+   margin-left: 268px;
+   width: 40%;
+   border-radius: 0;
+   padding: 11px;
 }
-.ageapp label {
-    margin-right: -10px;
+.ageapp label{
+    margin-left: 258px;
+    width: 40%;
+    border-radius: 0;
+    padding: 11px;
 }
 .civilapp{
     display: flex; /* Use flexbox for alignment */
@@ -787,7 +817,7 @@ textarea {
     min-width: 200px; /* Minimum width for responsiveness */
 }
 .columnapp input{
-    margin-left: 50px;
+    margin-left: 35px;
     min-width: 200px; /* Minimum width for responsiveness */
     border: 1px solid #10004E;
     border-radius: 0%;
@@ -896,7 +926,7 @@ textarea {
     padding: 8px;
     border: 1px solid #000000;
 }
-.obligation-table input[type="text"], [type="date"] {
+.obligation-table input[type="text"], .obligation-table input [type="date"] {
     border: none;
     background-color: transparent;
     outline: none;
@@ -965,6 +995,25 @@ textarea {
     margin-left: 150px;
 }
 
+.location-input {
+    border: 1px solid #10004E;
+    border-radius: 0%;
+    width: 450px; /* Set a fixed width instead of percentage */
+    margin-top: 60px;
+    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.sher {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    margin-left: -305px;
+}
+
+
 /* Checkbox field styling */
 .checkbox-field {
     display: flex;
@@ -1018,4 +1067,31 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     overflow: hidden;
+}
+
+.map-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    outline: none;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.map-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

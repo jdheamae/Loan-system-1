@@ -1,8 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './appform.css'; // This file will contain the necessary CSS
 import Footer from './footer';
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import Modal from 'react-modal';
+import L from 'leaflet';
 
+
+const icon = L.icon({
+    iconUrl: 'src/to/pin.jpg', // Provide your custom marker icon path here
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [0, -41],
+});
+
+const LocationPin = ({ onLocationSelect }) => {
+    useMapEvents({
+        click(e) {
+            const { lat, lng } = e?.latlng || {};
+            if (lat !== undefined && lng !== undefined) {
+                onLocationSelect([lat, lng]);
+            } else {
+                console.error("Error: Location data is undefined.");
+            }
+        }
+    });
+    return null;
+};
 const Appform = () => {
+
+    const [isMapVisible, setIsMapVisible] = useState(false);
+    const [location, setLocation] = useState(null);
+
+    const handleCheckboxChange = () => {
+        setIsMapVisible(!isMapVisible);
+    };
+
+    const handleLocationSelect = (selectedLocation) => {
+        if (selectedLocation && selectedLocation.length === 2) {
+            setLocation(selectedLocation);
+            setIsMapVisible(false); // Close the modal after selecting location
+        } else {
+            console.error("Invalid location data:", selectedLocation);
+        }
+    };
     return (
         <div className="application-form-pageapp">
             {/* Header Section */}
@@ -72,7 +113,7 @@ const Appform = () => {
                                 <label htmlFor="phone">Telephone/Mobile No.:</label>
                                 <input type="text" id="phone" name="phone" required />
                             </div>
-                            <div className="fillupan">
+                            <div className="ageapp">
                                 <label htmlFor="age">Age:</label>
                                 <input type="number" id="age" name="age" required />
                             </div>
@@ -84,7 +125,7 @@ const Appform = () => {
                                 </select>
                             </div>
 
-                            <div className="genderapp">
+                            <div className="civilapp">
                                 <label htmlFor="civilStatus">Civil Status:</label>
                                 <select id="civilStatus" name="civilStatus" required>
                                     <option value="single">Single</option>
@@ -102,10 +143,52 @@ const Appform = () => {
                                 <input type="text" id="spouseOccupation" name="spouseOccupation" />
                             </div>
 
-                            <div className="fillupan">
-                                <label htmlFor="sketch">Sketch of Residence:</label>
-                                <input type="file" id="sketch" name="sketch" required />
+                            <div className="form-row-checkbox-upload-date"> 
+                                <div className="checkboxq-groupapp">
+                                    <label className="pili">Share Residence Location
+                                        <input type="checkbox" id="shareResidenceLocation" name="shareResidenceLocation" value="shareResidenceLocation" onChange={handleCheckboxChange} />
+                                        <span className="checkmarkapp"></span>
+                                    </label>
+                                </div>
+                                <div className="sher"> 
+                                    <textarea
+                                        type="text"
+                                        value={location ? `Latitude: ${location[0]}, Longitude: ${location[1]}` : ''}
+                                        placeholder="Please select your location on the map"
+                                        readOnly
+                                        className="location-input"
+                                    />
+                                </div>
                             </div>
+
+                                {/* Modal for Map with Pin */}
+                                <Modal
+                                    isOpen={isMapVisible}
+                                    onRequestClose={() => setIsMapVisible(false)}
+                                    contentLabel="Select Residence Location"
+                                    className="map-modal"
+                                    overlayClassName="map-modal-overlay"
+                                >
+                                    <MapContainer
+                                        center={[12.8797, 121.7740]} // Centered on the Philippines
+                                        zoom={5}
+                                        style={{ height: "500px", width: "100%" }}
+                                    >
+                                        <TileLayer
+                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                            attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                                        />
+                                        {/* Pin marker when user clicks */}
+                                        {location && (
+                                            <Marker position={location} icon={icon}>
+                                                <Popup>
+                                                    Selected Location: <br /> Latitude: {location[0]} <br /> Longitude: {location[1]}
+                                                </Popup>
+                                            </Marker>
+                                        )}
+                                        <LocationPin onLocationSelect={handleLocationSelect} />
+                                    </MapContainer>
+                                </Modal>
                         </div>
 
 
@@ -277,7 +360,7 @@ const Appform = () => {
 
                 <div class="column-1app">
                     <div class="fillupan">
-                        <label for="payment">Made of Payment</label>
+                        <label for="payment">Mode of Payment</label>
                         <div class="checkbox-groupapp">
                             <label class="pili">Daily
                                 <input type="checkbox" id="daily" name="payment" value="daily"/>

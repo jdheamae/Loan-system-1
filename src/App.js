@@ -16,7 +16,7 @@ import ApplicationForm from './components/appform'
 import CashFlow from './components/cashflow'
 //import Sidebar from './components/Sidebar';
 import CoMaker from './components/comaker';
-import PhilippinesMap from'./PhilippinesMap';
+//import PhilippinesMap from'./components/phMap';
 
 function App() {
   return (

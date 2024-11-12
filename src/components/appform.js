@@ -30,19 +30,19 @@ const LocationPin = ({ onLocationSelect }) => {
 const Appform = () => {
 
     const [isMapVisible, setIsMapVisible] = useState(false);
-    const [location, setLocation] = useState(null);
-
-    const handleCheckboxChange = () => {
-        setIsMapVisible(!isMapVisible);
-    };
-
-    const handleLocationSelect = (selectedLocation) => {
-        if (selectedLocation && selectedLocation.length === 2) {
-            setLocation(selectedLocation);
-            setIsMapVisible(false); // Close the modal after selecting location
+    const [location, setLocation] = useState(null); // To store selected location
+    
+    const handleCheckboxChange = (event) => {
+        if (event.target.checked) {
+            setIsMapVisible(true); // Show map modal
         } else {
-            console.error("Invalid location data:", selectedLocation);
+            setIsMapVisible(false); // Hide map modal
         }
+    };
+    
+    const handleLocationSelect = (selectedLocation) => {
+        setLocation(selectedLocation); // Store selected location
+        setIsMapVisible(false); // Optionally close the map after selection
     };
     return (
         <div className="application-form-pageapp">
@@ -142,53 +142,55 @@ const Appform = () => {
                                 <label htmlFor="spouseOccupation">Spouse Occupation:</label>
                                 <input type="text" id="spouseOccupation" name="spouseOccupation" />
                             </div>
+                            
+                                    <div className="form-row-checkbox-upload-date">
+                                            <div className="checkboxq-groupapp">
+                                                <label class="pili">Share Residence Location
+                                                    <input type="checkbox" id="shareResidenceLocation" name="shareResidenceLocation" value="shareResidenceLocation" onChange={handleCheckboxChange}/>
+                                                    <span class="checkmarkapp"></span>
+                                                </label>
+                                                </div>
+                                                <div className="sher">
+                                                    <textarea
+                                                        type="text"
+                                                        value={location ? `Latitude: ${location[0]}, Longitude: ${location[1]}` : ''}
+                                                        placeholder="Please select your location on the map"
+                                                        readOnly
+                                                        className="location-input"
+                                                    />
+                                                </div>
 
-                            <div className="form-row-checkbox-upload-date"> 
-                                <div className="checkboxq-groupapp">
-                                    <label className="pili">Share Residence Location
-                                        <input type="checkbox" id="shareResidenceLocation" name="shareResidenceLocation" value="shareResidenceLocation" onChange={handleCheckboxChange} />
-                                        <span className="checkmarkapp"></span>
-                                    </label>
-                                </div>
-                                <div className="sher"> 
-                                    <textarea
-                                        type="text"
-                                        value={location ? `Latitude: ${location[0]}, Longitude: ${location[1]}` : ''}
-                                        placeholder="Please select your location on the map"
-                                        readOnly
-                                        className="location-input"
-                                    />
-                                </div>
-                            </div>
+                                                
 
-                                {/* Modal for Map with Pin */}
-                                <Modal
-                                    isOpen={isMapVisible}
-                                    onRequestClose={() => setIsMapVisible(false)}
-                                    contentLabel="Select Residence Location"
-                                    className="map-modal"
-                                    overlayClassName="map-modal-overlay"
-                                >
-                                    <MapContainer
-                                        center={[12.8797, 121.7740]} // Centered on the Philippines
-                                        zoom={5}
-                                        style={{ height: "500px", width: "100%" }}
-                                    >
-                                        <TileLayer
-                                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                            attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-                                        />
-                                        {/* Pin marker when user clicks */}
-                                        {location && (
-                                            <Marker position={location} icon={icon}>
-                                                <Popup>
-                                                    Selected Location: <br /> Latitude: {location[0]} <br /> Longitude: {location[1]}
-                                                </Popup>
-                                            </Marker>
-                                        )}
-                                        <LocationPin onLocationSelect={handleLocationSelect} />
-                                    </MapContainer>
-                                </Modal>
+                                            {/* Modal for Map with Pin */}
+                                            <Modal
+                                                isOpen={isMapVisible}
+                                                onRequestClose={() => setIsMapVisible(false)}
+                                                contentLabel="Select Residence Location"
+                                                className="map-modal"
+                                                overlayClassName="map-modal-overlay"
+                                            >
+                                                <MapContainer
+                                                    center={[12.8797, 121.7740]} // Centered on the Philippines
+                                                    zoom={5}
+                                                    style={{ height: "500px", width: "100%" }}
+                                                >
+                                                    <TileLayer
+                                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                                                        attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                                                    />
+                                                    {/* Pin marker when user clicks */}
+                                                    {location && (
+                                                        <Marker position={location} icon={icon}>
+                                                            <Popup>
+                                                                Selected Location: <br /> Latitude: {location[0]} <br /> Longitude: {location[1]}
+                                                            </Popup>
+                                                        </Marker>
+                                                    )}
+                                                    <LocationPin onLocationSelect={handleLocationSelect} />
+                                                </MapContainer>
+                                            </Modal>
+                                        </div>
                         </div>
 
 

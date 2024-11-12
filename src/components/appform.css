@@ -410,6 +410,8 @@ textarea {
 .checkboxq-groupapp {
     margin-left: -182px;
     margin-top: -90px;
+    display: flex;
+    flex-direction: column; /* Stack checkbox inputs vertically */
 }
 .checkboxq-groupapp label{
     font-size: 14px;
@@ -998,7 +1000,7 @@ textarea {
 .location-input {
     border: 1px solid #10004E;
     border-radius: 0%;
-    width: 450px; /* Set a fixed width instead of percentage */
+    width: 455px; /* Set a fixed width instead of percentage */
     margin-top: 60px;
     padding: 8px;
     font-size: 14px;
@@ -1007,10 +1009,10 @@ textarea {
 }
 
 .sher {
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    margin-left: -305px;
+
+
+
+    margin-left: -310px;
 }
 
 

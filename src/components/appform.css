@@ -316,7 +316,7 @@
     width: 50%; /* Make each group take full width */
 }
 .civilapp select {
-    width: 50%; /* Make each group take full width */
+    width: 100%; /* Make each group take full width */
     padding: 11px;
     margin: 0px 5px 0px 12px;
     border-radius: 0%;

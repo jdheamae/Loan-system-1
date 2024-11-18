@@ -14,9 +14,13 @@ import OfficerProfile from './components/officerprof';
 import OfficerDashboard1 from './components/officerdashboard1';
 import ApplicationForm from './components/appform'
 import CashFlow from './components/cashflow'
-//import Sidebar from './components/Sidebar';
+//import CashFlow2 from './components/cash2';
 import CoMaker from './components/comaker';
 //import PhilippinesMap from'./components/phMap';
+import PreQuiz from './components/prequiz'
+import QuizResult from './components/quizresult';
+import Notifications from './components/notification';
+
 
 function App() {
   return (
@@ -41,6 +45,11 @@ function App() {
           <Route path="/appform" element={<ApplicationForm />} />
           <Route path="/cashflow" element={<CashFlow />} />
           <Route path="/comaker" element={<CoMaker />} />
+
+          <Route path="/prequiz" element={<PreQuiz />} />
+          <Route path="/quizresult" element={<QuizResult />} />
+          <Route path="/notification" element={<Notifications />} />
+          
         </Routes>
       </div>
     </Router>

@@ -38,6 +38,8 @@ const CashFlow = () => {
         otherCashOutlay: "",
     });
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     const totalIncome = Object.values(income).reduce((acc, val) => acc + Number(val), 0);
     const totalExpenditures = Object.values(expenditures).reduce((acc, val) => acc + Number(val), 0);
     const totalCashOutlays = Object.values(cashOutlays).reduce((acc, val) => acc + Number(val), 0);
@@ -45,6 +47,17 @@ const CashFlow = () => {
     // Calculate total expenditures and cash outlays
     const totalExpenditureAndCashOutlays = totalExpenditures + totalCashOutlays;
     const netSavings = totalIncome - totalExpenditureAndCashOutlays;
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setIsModalOpen(true); // Show modal after submission
+    };
+
+    // Close modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
 
     return (
         <div className="cashapplication">
@@ -377,8 +390,19 @@ const CashFlow = () => {
         
 
             </div>
-
+            
             < Footer />
+
+                        {/* Modal */}
+                        {isModalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h3>You’ve submitted your application successfully</h3>
+
+                        <button onClick={closeModal} className="close-modal-btn">Close</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
